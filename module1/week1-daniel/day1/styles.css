@@ -1,0 +1,38 @@
+* {
+  background-color: bisque;
+}
+
+h1 {
+  color: rgb(58, 173, 188);
+  font-size: xx-large;
+}
+
+.red-paragraph {
+  background-color: rgb(227, 89, 89);
+}
+
+.hero-img {
+  background-image: url("https://www.g3boats.com/wp-content/uploads/2025/01/10-Must-Visit-Fishing-Spots.jpg");
+  background-position: center;
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  height: 30vh;
+  width: 50vw;
+}
+
+.hero-img > p {
+  position: absolute;
+  top: 40%;
+  left: 8%;
+}
+
+.josh {
+  height: 80vh;
+  width: 80vw;
+  /* object-fit: ;  THIS rule tells the image how to behave (ratio, resolution) */
+}
+
+/* 
+#josh-ragnar {
+
+} */
