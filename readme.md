@@ -1,7 +1,8 @@
-#WEB DEV OCTOBER 2025 ⚛️
+# WEB DEV OCTOBER 2025 ⚛️
+
 This repository contains the code created during the Web Dev October 2025. It follows the same structure as the student portal for easy navigation and reference. Happy coding! 💻
 
-##Folder Structure
+## Folder Structure
 
 ```
 WEBDEV OCT 2025
