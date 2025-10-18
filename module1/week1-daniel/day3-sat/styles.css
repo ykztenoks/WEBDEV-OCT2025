@@ -1,0 +1,39 @@
+@media screen and (max-width: 500px) {
+  .outer-box {
+    flex-direction: column;
+  }
+  .box h2 {
+    display: none;
+  }
+  .box > span {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 501px) {
+  .box > span {
+    display: none;
+  }
+}
+
+.outer-box {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  gap: 2%;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.box {
+  border: 1px solid black;
+  height: 10vh;
+  width: 10vw;
+  background-color: rgb(183, 130, 233);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
