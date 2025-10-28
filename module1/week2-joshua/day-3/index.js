@@ -1,7 +1,7 @@
 //***************if / else **************/
 const age = 20;
 // if (age > 21) {
-//   console.log("wow you are able to legally drink a beer");
+//   console.log("wow you are able to legally drink a beer");D
 // } else if (age === 21) {
 //   console.log("wow you are just barely able to drink");
 // } else {
@@ -12,21 +12,21 @@ const age = 20;
 
 const charName = "Cersei";
 
-// switch (charName) {
-//   case "Jon":
-//     console.log("house Targaryen");
-//     break;
-//   case "Aria":
-//     console.log("you are house Stark");
-//     break;
-//   case "Tyrion":
-//   case "Jamie":
-//   case "Cersei":
-//     console.log("greedy Lannisters");
-//     break;
-//   default:
-//     console.log("you are not so important");
-// }
+switch (charName) {
+  case "Jon":
+    console.log("house Targaryen");
+    break;
+  case "Aria":
+    console.log("you are house Stark");
+    break;
+  case "Tyrion":
+  case "Jamie":
+  case "Cersei":
+    console.log("greedy Lannisters");
+    break;
+  default:
+    console.log("you are not so important");
+}
 
 //*****************for loop ************/
 //syntax needs three things
