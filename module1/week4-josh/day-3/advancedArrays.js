@@ -8,6 +8,12 @@ console.log(
     return `${index}: ${element}` //returns a new array, with the same items
   })
 )
+
+randomArr.map((element, index) => {})
+randomArr.filter(() => {})
+randomArr.forEach(() => {})
+randomArr.sort(() => {})
+randomArr.reduce((acc, currentElement) => {}) // only in reduce, currentElement is the second argument
 // =============================================
 
 const numArr = [1, 2, 3, 4]
@@ -99,9 +105,13 @@ const ascend = unsortedNums.sort((a, b) => {
   return a - b
 })
 
+// const shorterAscend = unsortedNums.sort((a, b) => a - b)
+
 const descend = unsortedNums.sort((a, b) => {
   return b - a
 })
 
 console.log(sortedStudents)
 console.log(ascend)
+
+ascend.reverse()

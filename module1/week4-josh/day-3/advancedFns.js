@@ -10,6 +10,7 @@ console.log(myFunction())
 const arrowFn = () => {
   return "this is also my function"
 }
+
 function myFunction() {
   return "this is my function"
 }
