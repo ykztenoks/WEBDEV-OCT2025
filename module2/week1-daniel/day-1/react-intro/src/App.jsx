@@ -14,6 +14,7 @@ function App() {
   return (
     <>
       <Navbar />
+
       <div className="content">
         <h1>hello world</h1>
         <h3 className="my-name">
