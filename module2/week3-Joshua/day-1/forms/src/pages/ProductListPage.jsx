@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ProductListPage = ({ products }) => {
   return (
     <div>
@@ -8,6 +10,7 @@ const ProductListPage = ({ products }) => {
             <div key={oneProduct.id} className="product-card">
               <img src={oneProduct.thumbnail} alt={oneProduct.title} />
               <p>{oneProduct.title}</p>
+              <p>Price: {oneProduct.price}</p>
               <p>
                 Status:
                 {oneProduct.availabilityStatus === "Low Stock"
@@ -20,6 +23,9 @@ const ProductListPage = ({ products }) => {
                   ? "Ragnar Recommends"
                   : "Ragnar does not like"}
               </p>
+              <Link to={`/edit-product/${oneProduct.id}`}>
+                <button>Edit</button>
+              </Link>
             </div>
           );
         })}

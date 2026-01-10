@@ -7,6 +7,8 @@ import ProductListPage from "./pages/ProductListPage";
 import AddProductPage from "./pages/AddProduct";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import ProductDetails from "./pages/ProductDetails";
+import EditProductPage from "./pages/EditProductPage";
 function App() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -32,10 +34,17 @@ function App() {
             path="/products"
             element={<ProductListPage products={products} />}
           />
+          <Route path="/products/:productId" element={<ProductDetails />} />
           <Route
             path="/add-product"
             element={
               <AddProductPage products={products} setProducts={setProducts} />
+            }
+          />
+          <Route
+            path="/edit-product/:productId"
+            element={
+              <EditProductPage products={products} setProducts={setProducts} />
             }
           />
         </Routes>
