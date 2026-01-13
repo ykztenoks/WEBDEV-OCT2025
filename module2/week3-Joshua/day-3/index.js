@@ -19,17 +19,17 @@ const directions = [
   "↑ Head east on SW 8th St/Carlos Arboleya toward SW 1st Avenue",
   "➔ Turn right onto S Miami Ave",
   "* Chipotle Mexican Grill 891 S Miami Ave, Miami",
-];
+]
 
 function getDirections(step, callback, errorCallback) {
-  const foundStep = directions[step];
+  const foundStep = directions[step]
   setTimeout(() => {
     if (!foundStep) {
-      errorCallback("Instructions not found.");
+      errorCallback("Instructions not found.")
     } else {
-      callback(foundStep);
+      callback(foundStep)
     }
-  }, 500);
+  }, 500)
 }
 
 // // **************** Callback Hell **************
@@ -73,21 +73,21 @@ function getDirections(step, callback, errorCallback) {
 // *********************** Promises ******************
 //creating a promise
 const ourPromise = new Promise((resolve, reject) => {
-  const ourSecretData = "Ragnar sleeps more than he is awake";
+  const ourSecretData = "Ragnar sleeps more than he is awake"
   if (2 + 2 === 4) {
-    resolve(ourSecretData);
+    resolve(ourSecretData)
   } else {
-    reject("Sorry you dont have access");
+    reject("Sorry you dont have access")
   }
-});
+})
 const ourPromise2 = new Promise((resolve, reject) => {
-  const ourSecretData = "This is the second promise....";
+  const ourSecretData = "This is the second promise...."
   if (2 + 2 === 4) {
-    resolve(ourSecretData);
+    resolve(ourSecretData)
   } else {
-    reject("Error Error Error");
+    reject("Error Error Error")
   }
-});
+})
 //consuming a promise
 // with the .then() and .catch() method
 // ourPromise
@@ -110,13 +110,13 @@ const ourPromise2 = new Promise((resolve, reject) => {
 // const handleOurPromises = async()=>{}
 async function handleOurPromises() {
   try {
-    const response1 = await ourPromise;
-    const response2 = await ourPromise2;
-    console.log({ response1, response2 });
+    const response1 = await ourPromise
+    const response2 = await ourPromise2
+    console.log({ response1, response2 })
   } catch (error) {
-    console.log(error);
+    console.log(error)
   } finally {
-    console.log("hello from the finally block");
+    console.log("hello from the finally block")
   }
 }
 //make sure to call the function
@@ -132,12 +132,12 @@ async function handleOurPromises() {
 // using an API with fetch
 fetch("https://rickandmortyapi.com/api/character")
   .then((res) => {
-    return res.json();
+    return res.json()
   })
   .then((data) => {
-    const chars = data.results;
+    const chars = data.results
     chars.forEach((oneChar) => {
-      console.log(oneChar.name);
-    });
+      console.log(oneChar.name)
+    })
   })
-  .catch((err) => console.log(err));
+  .catch((err) => console.log(err))
