@@ -26,14 +26,14 @@ const AuthWrapper = ({ children }) => {
         },
       });
 
-      setIsLoading(false);
       setIsLoggedIn(true);
       setCurrentUserId(data.currentUser);
     } catch (error) {
       console.log(error.response.data.errorMessage);
-      setIsLoading(false);
       setIsLoggedIn(false);
       setCurrentUserId(null);
+    } finally {
+      setIsLoading(false);
     }
   };
   // logout function that deletes the token from local storage and navs to login
