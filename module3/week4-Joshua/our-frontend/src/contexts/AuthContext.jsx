@@ -14,6 +14,12 @@ const AuthWrapper = ({ children }) => {
   const authenticateUser = async function () {
     try {
       const theToken = localStorage.getItem("authToken");
+      if (!theToken) {
+        setIsLoading(false);
+        setIsLoggedIn(false);
+        setCurrentUserId(null);
+        return;
+      }
       const { data } = await axios.get("http://localhost:5005/auth/verify", {
         headers: {
           authorization: `Bearer ${theToken}`,
@@ -24,11 +30,10 @@ const AuthWrapper = ({ children }) => {
       setIsLoggedIn(true);
       setCurrentUserId(data.currentUser);
     } catch (error) {
-      console.log(error);
+      console.log(error.response.data.errorMessage);
       setIsLoading(false);
       setIsLoggedIn(false);
       setCurrentUserId(null);
-      nav("/login");
     }
   };
   // logout function that deletes the token from local storage and navs to login

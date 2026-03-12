@@ -24,7 +24,7 @@ const Login = () => {
       await authenticateUser();
       nav("/profile");
     } catch (error) {
-      console.log(error);
+      console.log(error.response.data);
     }
   }
   return (

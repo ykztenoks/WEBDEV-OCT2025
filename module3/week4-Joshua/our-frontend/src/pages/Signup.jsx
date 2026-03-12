@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const Signup = () => {
@@ -11,22 +12,23 @@ const Signup = () => {
     //create an object with all the data
     const userToSignup = { username, email, password };
     try {
-      const res = await fetch("http://localhost:5005/auth/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userToSignup),
-      });
-      const data = await res.json();
-      console.log(data);
-      if (data.errorMessage) {
-        console.log("failed");
-      } else {
-        nav("/login");
-      }
+      // const res = await fetch("http://localhost:5005/auth/signup", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(userToSignup),
+      // });
+      // const data = await res.json();
+      const res = await axios.post(
+        "http://localhost:5005/auth/signup",
+        userToSignup,
+      );
+      console.log(res);
+      nav("/login");
     } catch (error) {
-      console.log(error);
+      console.log(error.response.data);
+      setErrorMessage(error.response.data.errorMessage);
     }
   }
   return (
@@ -64,6 +66,7 @@ const Signup = () => {
           />
         </label>
         <button>Sigh up</button>
+        {errorMessage ? <p className="error">{errorMessage}</p> : null}
       </form>
     </div>
   );
