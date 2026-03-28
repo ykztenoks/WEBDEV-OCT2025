@@ -13,6 +13,7 @@ router.post("/signup", uploader.single("imageUrl"), async (req, res) => {
       console.log("User in DB with Profile image", createdUser);
       res.status(201).json(createdUser);
     }
+    //this is a cloudinary example
   } catch (error) {
     console.log(error);
     res.status(500).json(error);
